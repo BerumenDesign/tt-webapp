@@ -1,0 +1,13 @@
+body, html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: #ebebeb;
+}
+.Caption {
+  font: 8px !important;
+  color: white;
+  padding: 1em 0 .5em 0;
+  display: block;
+}
