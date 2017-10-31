@@ -1,13 +1,25 @@
 body, html {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
     padding: 0;
     background: #ebebeb;
+    color: #666 !important;
 }
 .Caption {
   font: 8px !important;
   color: white;
   padding: 1em 0 .5em 0;
   display: block;
+}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
 }
