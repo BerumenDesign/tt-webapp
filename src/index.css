@@ -3,23 +3,10 @@ body, html {
     font-size: 14px;
     margin: 0;
     padding: 0;
-    background: #ebebeb;
+    background: #D6ECFD;
     color: #666 !important;
 }
-.Caption {
-  font: 8px !important;
-  color: white;
-  padding: 1em 0 .5em 0;
-  display: block;
-}
-.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  font-weight: bold;
-  text-align: center;
-}
-
-.wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
+span[role=menuitem] {
+  font-size: 14px !important;
+  width: 95% !important;
 }
