@@ -32,11 +32,6 @@ const appBarStyle = {
   backgroundColor: grey900,
   marginBottom: '1em'
 };
-
-const trasnButton = {
-    alignItems: 'flex-end',
-    margin: '.5em 2em',
-};
 const listLabel = {
   fontSize: '.75em',
   display: 'block',
@@ -99,7 +94,6 @@ const ticketChat = {
 const buttonsChat = {
   padding: '1em',
   width: '100%',
-  textAlign: 'right'
 };
 const repChat = {
   padding: '1em',
@@ -158,6 +152,10 @@ const TtView = () => (<div>
             <TtCard/>
             <TtCard/>
             <TtCard/>
+            <TtCard/>
+            <TtCard/>
+            <TtCard/>
+            <TtCard/>
           </div>
         </Paper>
       </Col>
@@ -173,7 +171,6 @@ const TtView = () => (<div>
                   display: 'flex'
                 }}>
                 <Subheader inset={false}>Your tickets in progress</Subheader>
-                <FlatButton style={trasnButton}> TRANSFER</FlatButton>
               </Col>
             </Row>
             {/* Header of in progess ticket */}
@@ -232,14 +229,18 @@ const TtView = () => (<div>
             </Row>
             {/* Rows fopr text field and buttons */}
             <Row>
-              <Col xs={12} >
-                <TextField hintText="Type message" fullWidth={true}/>
+              <Col xs={9} style={buttonsChat}>
+                <TextField hintText="Type message" fullWidth={true} style={{textAlign:'center'}}/>
+              </Col>
+              <Col xs={3} style={buttonsChat}>
+                <RaisedButton label="Send" primary={true}/>
               </Col>
             </Row>
             <Row>
               <Col xs={12} style={buttonsChat}>
-                <RaisedButton label="Send" primary={true}/>
-                <FlatButton label="Mark as resolved"/>
+                <FlatButton > TRANSFER</FlatButton>
+                <FlatButton  label="Mark as resolved"/>
+
               </Col>
             </Row>
 
