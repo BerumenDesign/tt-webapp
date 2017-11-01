@@ -13,12 +13,14 @@ import MenuItem from 'material-ui/MenuItem'
 import IconButton from 'material-ui/IconButton';
 import Chat from 'material-ui/svg-icons/communication/chat';
 import Feedback from 'material-ui/svg-icons/communication/chat';
-import ExitToApp from 'material-ui/svg-icons/communication/chat';
+import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 import Person from 'material-ui/svg-icons/social/person';
 import Done from 'material-ui/svg-icons/action/done';
+import Timer from 'material-ui/svg-icons/image/timer';
 import TtCard from './tCard';
 import SvgCustomIcon from './tIcon';
-import {white} from 'material-ui/styles/colors';
+import {white, blue900, blue700, blue400, blue200, blue50, indigo500, indigo200, amber100, green500, grey900, grey700, grey500, grey400, grey200, cyan100, cyan50, orangeA700
+} from 'material-ui/styles/colors';
 
 const wrapper = {
   display: 'flex',
@@ -27,7 +29,7 @@ const wrapper = {
 };
 
 const appBarStyle = {
-  backgroundColor: '#00345C',
+  backgroundColor: grey900,
   marginBottom: '1em'
 };
 
@@ -44,8 +46,8 @@ const listLabel = {
 const listOfTickets = {
   padding: '1em',
   display: 'block',
-  background: '#5490BE',
-  color: 'white',
+  background: white,
+  color: grey700,
   borderRadius: 0,
   height: '87vh'
 };
@@ -58,16 +60,29 @@ const ticketCardList = {
   overflowY: 'auto',
   overflowX: 'hidden',
   height: '81vh',
-  background: '#BBDBF4'
+  background: cyan50,
 };
 const ticketInfoPanel = {
   padding: '1em',
   height: '60vh',
-  backgroundColor: '#777196',
-  color: 'white'
+  backgroundColor: cyan100,
+  color: grey700
+};
+const chatDivider = {
+  color: white,
+  borderTop: '1px solid white',
+  marginTop: '1em',
+};
+const Active = {
+  color: blue700
 };
 const whiteIcon = {
-  color: 'white'
+  color: white
+};
+const ListIcon = {
+  color: grey700,
+  width: '1em',
+  marginBottom: '-.5em'
 };
 const tabStyle = {
   backgroundColor: 'white',
@@ -77,7 +92,7 @@ const tabStyle = {
 const ticketChat = {
   padding: '1em',
   height: '60vh',
-  backgroundColor: '#F8F8F8',
+  backgroundColor: cyan50,
   lineHeight: '1.5em',
   color: '#666',
 };
@@ -88,11 +103,11 @@ const buttonsChat = {
 };
 const repChat = {
   padding: '1em',
-  background: '#EEECF7',
+  background: amber100,
 };
 const titleChat = {
   fontSize:'.85em',
-  color: '#666',
+  color: orangeA700,
 };
 const timeStampChat = {
   position: 'relative',
@@ -112,7 +127,6 @@ const custTitleChat = {
 const TtView = () => (<div>
         {/* App Bar */}
   <AppBar title="Trouble Ticket" style={appBarStyle}
-    iconElementLeft={<IconButton><SvgCustomIcon/></IconButton>}
     iconElementRight={<IconButton><ExitToApp style={whiteIcon}/></IconButton>}/>
 
   <Grid style={wrapper}>
@@ -121,15 +135,15 @@ const TtView = () => (<div>
       <Col xs={3} style={listOfTickets}>
         Tickets
         <Menu>
-          <MenuItem primaryText="New" secondaryText="4" leftIcon={<Feedback color={white} />} style={whiteIcon} />
+          <MenuItem primaryText="New" secondaryText="4" leftIcon={<Feedback color={blue700} />} style={Active} />
                     <Divider/>
-          <MenuItem primaryText="In progress" secondaryText="8" style={whiteIcon} />
-          <MenuItem primaryText="@You" secondaryText="2" leftIcon={<Person color={white} />} style={whiteIcon}/>
-          <MenuItem primaryText="@John Smith" secondaryText="1" leftIcon={<Chat color={white} />} style={whiteIcon}/>
-          <MenuItem primaryText="@Jane Smith" secondaryText="2" leftIcon={<Chat color={white} />} style={whiteIcon}/>
-          <MenuItem primaryText="@Jordan Smith" secondaryText="3" leftIcon={<Chat color={white} />} style={whiteIcon}/>
+          <MenuItem primaryText="In progress" secondaryText="8" />
+          <MenuItem primaryText="@You" secondaryText="2" leftIcon={<Person color={green500} />} />
+          <MenuItem primaryText="@John Smith" secondaryText="1" leftIcon={<Person color={green500} />} />
+          <MenuItem primaryText="@Jane Smith" secondaryText="2" leftIcon={<Person color={green500} />} />
+          <MenuItem primaryText="@Jordan Smith" secondaryText="0" leftIcon={<Person color={grey400} />} />
           <Divider/>
-          <MenuItem primaryText="Processed" secondaryText="2" leftIcon={<Done color={white} />} style={whiteIcon}/>
+          <MenuItem primaryText="Processed" secondaryText="2" leftIcon={<Done color={blue700} />}/>
         </Menu>
       </Col>
 
@@ -159,7 +173,7 @@ const TtView = () => (<div>
                   display: 'flex'
                 }}>
                 <Subheader inset={false}>Your tickets in progress</Subheader>
-                <FlatButton style={trasnButton} label="Transfer"/>
+                <FlatButton style={trasnButton}> TRANSFER</FlatButton>
               </Col>
             </Row>
             {/* Header of in progess ticket */}
@@ -167,26 +181,23 @@ const TtView = () => (<div>
             <Row>
               <Col xs={12}>
                 <Tabs>
-                  <Tab label="LeBron James" style={tabStyle} inkBarStyle={{background: 'blue'}}>
+                  <Tab label="I cannot connect LTE" style={tabStyle}>
                     <Row>
                       <Col xs={4} style={ticketInfoPanel}>
                         Ticket ID 89329-01
                         <span style={listLabel}>Duration</span>
-                        00:05:00
-                        <Divider style={{
-                            marginTop: '1em'
-                          }}/>
+                        <Timer style={ListIcon}/> 00:05:00
+                        <Divider style={chatDivider}/>
                         <span style={listLabel}>SSID</span>
                         SHAW-C598E0-EXT
                         <span style={listLabel}>Frequency</span>
                         2412
                         <span style={listLabel}>dBM</span>
                         -55
-                        <Divider style={{
-                            marginTop: '1em'
-                          }}/>
+                        <Divider style={chatDivider}/>
                         <span style={listLabel}>Name</span>
                         LeBron James
+                        <FlatButton fullWidth={true}>OPEN IN USER EXPLORER</FlatButton>
                         <span style={listLabel}>Email</span>
                         leb@james.com
                         <span style={listLabel}>SSID</span>
@@ -209,7 +220,7 @@ const TtView = () => (<div>
                       </Col>
                     </Row>
                   </Tab>
-                  <Tab label="Kyrie Irving" style={tabStyle}>
+                  <Tab label="The coverage in my area is terrible" style={tabStyle} >
                     <div>
                       <p>
                         This is another in progress conversation.
