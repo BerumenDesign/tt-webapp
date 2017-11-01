@@ -12,10 +12,10 @@ import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem'
 import IconButton from 'material-ui/IconButton';
 import Chat from 'material-ui/svg-icons/communication/chat';
+import Feedback from 'material-ui/svg-icons/communication/chat';
 import ExitToApp from 'material-ui/svg-icons/communication/chat';
 import Person from 'material-ui/svg-icons/social/person';
 import Done from 'material-ui/svg-icons/action/done';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import TtCard from './tCard';
 import SvgCustomIcon from './tIcon';
 import {white} from 'material-ui/styles/colors';
@@ -31,10 +31,6 @@ const appBarStyle = {
   marginBottom: '1em'
 };
 
-const floatRight = {
-  display: 'flex',
-  alignItems: 'flex-end'
-};
 const trasnButton = {
     alignItems: 'flex-end',
     margin: '.5em 2em',
@@ -199,16 +195,17 @@ const TtView = () => (<div>
                         Samsung (Android 24)
                       </Col>
                       <Col xs={8} style={ticketChat}>
+                        <div style={custChat}>
+                          <div style={custTitleChat}>John Smith
+                          <span style={timeStampChat}>3 m ago</span></div>
+                          <div>Hey my LTE connection is no bueno, why?</div>
+                        </div>
                         <div style={repChat}>
                           <div style={titleChat}>You
-                          <span style={timeStampChat}>3 m ago</span></div>
+                          <span style={timeStampChat}>Just now</span></div>
                           <div>Hello, I am sorry to hear that, when was the last time it happened?</div>
                         </div>
-                        <div style={custChat}>
-                          <div style={custTitleChat}>You
-                          <span style={timeStampChat}>3 m ago</span></div>
-                          <div>Hello, I am sorry to hear that, when was the last time it happened?</div>
-                        </div>
+
                       </Col>
                     </Row>
                   </Tab>
